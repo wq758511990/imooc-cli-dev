@@ -1,5 +1,5 @@
 {
-  "name": "@imooc-cli-dev/utils",
+  "name": "@imooc-cli-dev-wwx/utils",
   "version": "1.0.6",
   "description": "imooc-cli-dev utils",
   "author": "王子鑫 <wzix758511990@qq.com>",
@@ -19,5 +19,5 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "9dcbfb0ca886d46983581947b45ce81d1c82704f"
+  "gitHead": "6d2674b5b97b1c6da058281cbd564e1c6ed5d4f2"
 }
