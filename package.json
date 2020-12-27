@@ -1,5 +1,5 @@
 {
-  "name": "imooc-cli-dev-www",
+  "name": "imooc-cli-dev",
   "version": "1.0.0",
   "description": "imooc-cli dev",
   "main": "index.js",
