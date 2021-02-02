@@ -29,7 +29,7 @@ class Package {
     this.cacheFilePathPrefix = this.packageName.replace('/', '_');
   }
 
-  async prepare() {
+  async prepare () {
     if (this.storeDir && !pathExists(this.storeDir)) {
       fse.mkdirpSync(this.storeDir);
     }
@@ -38,16 +38,16 @@ class Package {
     }
   }
 
-  get cacheFilePath() {
+  get cacheFilePath () {
     return path.resolve(this.storeDir, `_${this.cacheFilePathPrefix}@${this.packageVersion}@${this.packageName}`);
   }
 
-  getSpecificCacheFilePath(packageVersion) {
+  getSpecificCacheFilePath (packageVersion) {
     return path.resolve(this.storeDir, `_${this.cacheFilePathPrefix}@${packageVersion}@${this.packageName}`);
   }
 
   // 判断当前Package是否存在
-  async exists() {
+  async exists () {
     if (this.storeDir) {
       await this.prepare();
       return pathExists(this.cacheFilePath);
@@ -57,7 +57,7 @@ class Package {
   }
 
   // 安装Package
-  async install() {
+  async install () {
     await this.prepare();
     return npminstall({
       root: this.targetPath,
@@ -71,7 +71,7 @@ class Package {
   }
 
   // 更新Package
-  async update() {
+  async update () {
     await this.prepare();
     // 1. 获取最新的npm模块版本号
     const latestPackageVersion = await getNpmLatestVersion(this.packageName);
@@ -89,12 +89,14 @@ class Package {
         }],
       });
       this.packageVersion = latestPackageVersion;
+    } else {
+      this.packageVersion = latestPackageVersion;
     }
   }
 
   // 获取入口文件的路径
-  getRootFilePath() {
-    function _getRootFile(targetPath) {
+  getRootFilePath () {
+    function _getRootFile (targetPath) {
       // 1. 获取package.json所在目录
       const dir = pkgDir(targetPath);
       if (dir) {

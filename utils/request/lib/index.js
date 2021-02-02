@@ -1,10 +1,8 @@
 'use strict';
 
 const axios = require('axios');
-
 const BASE_URL = process.env.IMOOC_CLI_BASE_URL ? process.env.IMOOC_CLI_BASE_URL :
-  'http://book.youbaobao.xyz:7001';
-
+  'http://127.0.0.1:7001';
 const request = axios.create({
   baseURL: BASE_URL,
   timeout: 5000,
